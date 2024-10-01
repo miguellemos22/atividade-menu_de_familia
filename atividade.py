@@ -57,7 +57,11 @@ while True:
 
 nome_arquivo = "arquivo_familia.txt"
 
-with open(nome_arquivo, "a") as arquivo_familia:
+with open(nome_arquivo, "w") as arquivo_familia:
     for i in range(1):
-        arquivo_familia.write(f"familias que responderam{contator} ,media  salarial:  {media_salario},media de filhos:  {media_filhos}, maior salario: {maiorsalario}, menor salario: {menorsalario}\n  ")
+        arquivo_familia.write(f""" familias que responderam: {contator}
+            media  salarial:  {media_salario}
+            media de filhos:  {media_filhos}
+            maior salario: {maiorsalario}, 
+            menor salario: {menorsalario}\n  """)
 arquivo_familia.close()
