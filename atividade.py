@@ -6,6 +6,10 @@ quantidade_de_familiares = 1
 lista_familiares = []
 lista_salario = []
 contator = 0
+media = 0
+soma_salario = 0
+soma_flihos = 0
+
 
 
 while True:
@@ -30,12 +34,20 @@ while True:
                     lista_salario.append(salario)
                 
             case 2:
+                print(f"familias que responderam{contator}")
                 maiorsalario =max(lista_salario)
                 menorsalario =min(lista_salario)
-                print("maior salario: {maiorsalario}")
-                print("menor salario: {menorsalario}")
-                print("quantidade de filhos: {quantidade_filhos}")
-                print("total de familiares que responderam a pesquisa {contador}")
+                soma_salario =sum(lista_salario)
+                media_salario = soma_salario / contator
+                soma_flihos =sum(lista_familiares)
+                media_filhos = soma_flihos / contator
+                print(f"maior salario: {maiorsalario}")
+                print(f"menor salario: {menorsalario}")
+                print(f"quantidade de filhos: {quantidade_filhos}")
+                print(f"media  salarial:  {media_salario}")
+                print(f"media de filhos:  {media_filhos}")
+                
+                
                 break
             case 3:
                 print("===programa finalizado===")
@@ -43,4 +55,9 @@ while True:
             case _:
                 print("opção invalida")
 
+nome_arquivo = "arquivo_familia.txt"
 
+with open(nome_arquivo, "a") as arquivo_familia:
+    for familia in lista_familiares, lista_salario:
+        arquivo_familia.write(f"familias que responderam{contator} ,media  salarial:  {media_salario},media de filhos:  {media_filhos}, maior salario: {maiorsalario}, menor salario: {menorsalario}\n  ")
+arquivo_familia.close()
