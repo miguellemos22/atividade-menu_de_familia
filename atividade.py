@@ -34,7 +34,7 @@ while True:
                     lista_salario.append(salario)
                 
             case 2:
-                print(f"familias que responderam{contator}")
+                print(f"familias que responderam: {contator}")
                 maiorsalario =max(lista_salario)
                 menorsalario =min(lista_salario)
                 soma_salario =sum(lista_salario)
@@ -58,6 +58,6 @@ while True:
 nome_arquivo = "arquivo_familia.txt"
 
 with open(nome_arquivo, "a") as arquivo_familia:
-    for familia in lista_familiares, lista_salario:
+    for i in range(1):
         arquivo_familia.write(f"familias que responderam{contator} ,media  salarial:  {media_salario},media de filhos:  {media_filhos}, maior salario: {maiorsalario}, menor salario: {menorsalario}\n  ")
 arquivo_familia.close()
